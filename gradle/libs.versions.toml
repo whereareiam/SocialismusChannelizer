@@ -11,6 +11,9 @@ lombok = "1.18.38"
 # general
 guice = "7.0.0"
 
+# platform api
+spigot = "1.21-R0.1-SNAPSHOT"
+
 [libraries]
 
 socialismus = { group = "com.github.whereareiam", name = "Socialismus", version.ref = "socialismus" }
@@ -20,6 +23,9 @@ lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" 
 
 # general
 guice = { group = "com.google.inject", name = "guice", version.ref = "guice" }
+
+# platform api
+spigot = { group = "org.spigotmc", name = "spigot-api", version.ref = "spigot" }
 
 [bundles]
 

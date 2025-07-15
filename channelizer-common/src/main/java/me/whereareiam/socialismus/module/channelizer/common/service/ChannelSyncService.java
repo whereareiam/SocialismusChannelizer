@@ -8,8 +8,7 @@ import me.whereareiam.socialismus.api.output.resource.sync.SyncSubscriber;
 
 @Singleton
 @RequiredArgsConstructor(onConstructor_ = {@Inject})
-public class RedisSyncService implements SyncService {
-
+public class ChannelSyncService implements SyncService {
 	@Override
 	public void publish(String channel, byte[] payload) {
 	}

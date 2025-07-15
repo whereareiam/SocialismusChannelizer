@@ -1,6 +1,9 @@
 [versions]
 
-socialismus = "2.0.0-RC2"
+# plugins
+shadow = "8.3.7"
+
+socialismus = "dev-SNAPSHOT"
 
 # compile time processing
 lombok = "1.18.38"
@@ -21,3 +24,5 @@ guice = { group = "com.google.inject", name = "guice", version.ref = "guice" }
 [bundles]
 
 [plugins]
+
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }

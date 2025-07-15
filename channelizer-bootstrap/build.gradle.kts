@@ -6,8 +6,15 @@ plugins {
 }
 
 dependencies {
-    "implementation"(project(":channelizer-common-api"))
-    "implementation"(project(":channelizer-common"))
+    rootProject.allprojects
+        .filter { it != project && it.parent == rootProject }
+        .forEach { subproject ->
+            "implementation"(project(":${subproject.name}"))
+        }
+
+    rootProject.project("channelizer-platform").subprojects.forEach { platformSubproject ->
+        implementation(platformSubproject)
+    }
 }
 
 tasks.withType<ShadowJar> {

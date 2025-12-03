@@ -1,8 +1,8 @@
 package me.whereareiam.socialismus.module.channelizer.platform.bukkit;
 
 import com.google.inject.AbstractModule;
-import me.whereareiam.socialismus.api.output.resource.sync.SyncService;
 import me.whereareiam.socialismus.module.channelizer.platform.bukkit.service.ChannelSyncService;
+import me.whereareiam.socialismus.service.resource.sync.SyncService;
 
 public class CommonConfiguration extends AbstractModule {
 	@Override

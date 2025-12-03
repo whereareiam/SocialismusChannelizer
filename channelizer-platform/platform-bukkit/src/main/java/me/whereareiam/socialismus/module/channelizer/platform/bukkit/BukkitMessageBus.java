@@ -3,11 +3,11 @@ package me.whereareiam.socialismus.module.channelizer.platform.bukkit;
 import com.google.common.io.ByteArrayDataInput;
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
+import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import me.whereareiam.socialismus.api.Logger;
-import me.whereareiam.socialismus.api.output.resource.sync.SyncSubscriber;
-import me.whereareiam.socialismus.module.channelizer.api.ParentInjector;
-import me.whereareiam.socialismus.module.channelizer.api.output.PlatformMessageBus;
+import me.whereareiam.socialismus.logging.Logger;
+import me.whereareiam.socialismus.module.channelizer.api.PlatformMessageBus;
+import me.whereareiam.socialismus.service.resource.sync.SyncSubscriber;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
@@ -25,8 +25,9 @@ public final class BukkitMessageBus implements PlatformMessageBus, PluginMessage
 	private final Plugin plugin;
 	private final Map<String, List<SyncSubscriber>> listeners = new HashMap<>();
 
-	public BukkitMessageBus() {
-		this.plugin = ParentInjector.getInjector().getInstance(Plugin.class);
+	@Inject
+	public BukkitMessageBus(Plugin plugin) {
+		this.plugin = plugin;
 		plugin.getServer().getMessenger()
 				.registerOutgoingPluginChannel(plugin, PM_CHANNEL);
 		plugin.getServer().getMessenger()

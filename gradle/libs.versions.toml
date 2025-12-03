@@ -3,7 +3,7 @@
 # plugins
 shadow = "8.3.7"
 
-socialismus = "dev-SNAPSHOT"
+socialismus = "dev-09d9415"
 
 # compile time processing
 lombok = "1.18.38"
@@ -12,11 +12,11 @@ lombok = "1.18.38"
 guice = "7.0.0"
 
 # platform api
-spigot = "1.21-R0.1-SNAPSHOT"
+spigot = "1.21.10-R0.1-SNAPSHOT"
 
 [libraries]
 
-socialismus = { group = "com.github.whereareiam", name = "Socialismus", version.ref = "socialismus" }
+socialismus = { group = "me.whereareiam", name = "Socialismus", version.ref = "socialismus" }
 
 # compile time processing
 lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }

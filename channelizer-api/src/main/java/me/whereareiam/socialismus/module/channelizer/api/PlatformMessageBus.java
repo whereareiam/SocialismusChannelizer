@@ -1,6 +1,6 @@
-package me.whereareiam.socialismus.module.channelizer.api.output;
+package me.whereareiam.socialismus.module.channelizer.api;
 
-import me.whereareiam.socialismus.api.output.resource.sync.SyncSubscriber;
+import me.whereareiam.socialismus.service.resource.sync.SyncSubscriber;
 
 public interface PlatformMessageBus {
 	void publish(String channel, byte[] payload);

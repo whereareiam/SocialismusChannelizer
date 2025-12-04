@@ -2,7 +2,6 @@ package me.whereareiam.socialismus.module.channelizer;
 
 import com.google.inject.*;
 import com.google.inject.Module;
-import com.sun.source.util.Plugin;
 import lombok.RequiredArgsConstructor;
 import me.whereareiam.socialismus.module.SocialisticModule;
 import me.whereareiam.socialismus.module.channelizer.platform.bukkit.BukkitInjectorConfiguration;
@@ -16,7 +15,7 @@ import java.util.Map;
 
 @RequiredArgsConstructor(onConstructor_ = {@Inject})
 public class SocialismusChannelizer extends SocialisticModule implements ResourceProvider {
-	private final Plugin plugin;
+	private final Injector parentInjector;
 	private Injector injector;
 
 	@Override
@@ -50,7 +49,7 @@ public class SocialismusChannelizer extends SocialisticModule implements Resourc
 
 	private Module platformModule() {
 		if (PlatformType.isGameServer())
-			return new BukkitInjectorConfiguration(plugin);
+			return new BukkitInjectorConfiguration(parentInjector);
 
 		return new AbstractModule() {
 			@Override

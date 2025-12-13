@@ -1,12 +1,12 @@
 [versions]
 
 # plugins
-shadow = "8.3.7"
+shadow = "9.3.0"
 
-socialismus = "dev-09d9415"
+socialismus = "dev-66a47f2"
 
 # compile time processing
-lombok = "1.18.38"
+lombok = "1.18.42"
 
 # general
 guice = "7.0.0"
@@ -15,7 +15,7 @@ guice = "7.0.0"
 spigot = "1.21.10-R0.1-SNAPSHOT"
 
 # testing
-junit = "6.0.0"
+junit = "6.0.1"
 mockito = "5.20.0"
 
 [libraries]

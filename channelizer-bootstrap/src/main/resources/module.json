@@ -20,8 +20,8 @@
   ],
   "updater": {
     "release": {
-      "provider": "GITHUB",
-      "id": "whereareiam/SocialismusChannelizer"
+      "provider": "MODRINTH",
+      "id": "socialismus-channelizer"
     },
     "dev": {
       "provider": "GITHUB",

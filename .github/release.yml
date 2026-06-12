@@ -12,6 +12,10 @@ changelog:
       labels:
         - bug
 
+    - title: "Dependencies"
+      labels:
+        - dependencies
+
   exclude:
     labels:
       - skip-changelog

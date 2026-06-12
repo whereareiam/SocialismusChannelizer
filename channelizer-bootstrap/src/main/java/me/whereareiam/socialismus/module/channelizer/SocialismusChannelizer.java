@@ -1,6 +1,9 @@
 package me.whereareiam.socialismus.module.channelizer;
 
-import com.google.inject.*;
+import com.google.inject.AbstractModule;
+import com.google.inject.Guice;
+import com.google.inject.Inject;
+import com.google.inject.Injector;
 import com.google.inject.Module;
 import lombok.RequiredArgsConstructor;
 import me.whereareiam.socialismus.module.SocialisticModule;
@@ -13,6 +16,7 @@ import me.whereareiam.socialismus.type.ResourceType;
 
 import java.util.Map;
 
+@SuppressWarnings("unused")
 @RequiredArgsConstructor(onConstructor_ = {@Inject})
 public class SocialismusChannelizer extends SocialisticModule implements ResourceProvider {
 	private final Injector parentInjector;
@@ -22,7 +26,6 @@ public class SocialismusChannelizer extends SocialisticModule implements Resourc
 	public void onLoad() {
 		injector =
 				Guice.createInjector(
-						new SocialismusChannelizerInjectorConfiguration(),
 						new CommonConfiguration(),
 						platformModule()
 				);

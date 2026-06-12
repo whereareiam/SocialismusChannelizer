@@ -1,7 +1,7 @@
-repositories {
-    maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
+plugins {
+    id("shared")
 }
 
 dependencies {
-    "compileOnly"(libs.spigot)
+    compileOnly(libs.spigot)
 }

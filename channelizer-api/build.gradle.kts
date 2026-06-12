@@ -1,25 +1,17 @@
-java {
-    withSourcesJar()
-    withJavadocJar()
+plugins {
+    id("api")
 }
 
-publishing {
-    publications {
-        create<MavenPublication>("mavenJava") {
-            from(components["java"])
-            artifactId = "SocialismusChannelizer"
-            pom {
-                name.set("SocialismusChannelizer")
-                description.set("Public API for SocialismusChannelizer - Socialismus channel synchronization module")
-            }
-        }
+toolkitPublish {
+    artifactId.set("SocialismusChannelizer")
+
+    pom {
+        name.set("SocialismusChannelizer")
+        description.set("Public API for SocialismusChannelizer - Socialismus channel synchronization module")
     }
-}
 
-tasks.withType<Javadoc> {
-    (options as StandardJavadocDocletOptions).apply {
-        addStringOption("Xdoclint:none", "-quiet")
-        title = "SocialismusChannelizer API"
-        windowTitle = "SocialismusChannelizer API"
+    javadoc {
+        title.set("SocialismusChannelizer API")
+        windowTitle.set("SocialismusChannelizer API")
     }
 }

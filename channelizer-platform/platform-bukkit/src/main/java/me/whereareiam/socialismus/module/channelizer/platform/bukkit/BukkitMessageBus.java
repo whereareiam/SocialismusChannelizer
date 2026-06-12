@@ -8,6 +8,7 @@ import com.google.inject.Singleton;
 import me.whereareiam.socialismus.logging.Logger;
 import me.whereareiam.socialismus.module.channelizer.api.PlatformMessageBus;
 import me.whereareiam.socialismus.service.resource.sync.SyncSubscriber;
+import org.jetbrains.annotations.NotNull;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
@@ -35,7 +36,7 @@ public final class BukkitMessageBus implements PlatformMessageBus, PluginMessage
 	}
 
 	@Override
-	public void publish(String channel, byte[] payload) {
+	public void publish(@NotNull String channel, byte @NotNull [] payload) {
 		Logger.debug("Publishing to channel: " + channel + ", payload length: " + payload.length);
 		Player carrier = Bukkit.getOnlinePlayers().stream().findFirst().orElse(null);
 		if (carrier == null) {
@@ -55,7 +56,7 @@ public final class BukkitMessageBus implements PlatformMessageBus, PluginMessage
 	}
 
 	@Override
-	public void subscribe(String channel, SyncSubscriber subscriber) {
+	public void subscribe(@NotNull String channel, @NotNull SyncSubscriber subscriber) {
 		Logger.debug("Subscribing to channel: " + channel);
 		listeners.computeIfAbsent(channel, k -> new ArrayList<>()).add(subscriber);
 	}

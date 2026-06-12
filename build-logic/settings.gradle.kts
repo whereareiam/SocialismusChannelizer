@@ -1,8 +1,6 @@
-rootProject.name = "SocialismusChannelizer"
+rootProject.name = "build-logic"
 
 pluginManagement {
-    includeBuild("build-logic")
-
     repositories {
         gradlePluginPortal()
         mavenCentral()
@@ -12,17 +10,16 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
-
     repositories {
+        gradlePluginPortal()
         mavenCentral()
         maven("https://maven.whereareiam.me/release")
         maven("https://maven.whereareiam.me/development")
-        maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
+    }
+
+    versionCatalogs {
+        create("libs") {
+            from(files("../gradle/libs.versions.toml"))
+        }
     }
 }
-
-include("channelizer-platform:platform-bukkit")
-include("channelizer-bootstrap")
-include("channelizer-common")
-include("channelizer-api")

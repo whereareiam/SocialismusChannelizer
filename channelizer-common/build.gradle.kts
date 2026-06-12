@@ -1,3 +1,3 @@
-dependencies {
-    "compileOnly"(project(":channelizer-api"))
+plugins {
+    id("shared")
 }

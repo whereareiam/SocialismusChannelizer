@@ -14,7 +14,7 @@ guice = "7.0.0"
 annotations = "26.1.0"
 
 # platform api
-spigot = "26.1.2-R0.1-SNAPSHOT"
+spigot = "26.2-R0.1-SNAPSHOT"
 
 # testing
 junit = "6.1.0"
